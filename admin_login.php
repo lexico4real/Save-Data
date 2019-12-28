@@ -35,7 +35,7 @@
                             <div class="col-md-12 input-group-btn  mt-2 align-center">
                                 <button type="submit" class="btn btn-primary btn-form display-4">LOGIN</button>
                             </div>
-                            <p>Not an Admin? Request an Admin privilege here</p>
+                            <div class="col-md-12  form-group" style="text-align:center">Not an Admin? Request an Admin privilege <a href="#">here</a> </div>
                         </div>
                     </form><!---Formbuilder Form--->
                 </div>
