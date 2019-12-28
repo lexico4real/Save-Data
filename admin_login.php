@@ -18,7 +18,7 @@
                 </h2>
                 <div data-form-type="">
                     <!---Formbuilder Form--->
-                    <form action="contact.php" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="z989lQIPVDn8X4bkWkX06aEM85LHFDtkTWntIjB9KrhsW8v1nM7Z/AlmTB8zg+pd+580954kTKmWuwByiN+n/aQd1K0FBFAUcFdmPs6aJ/kQROXvaH3kb87hMAAA9C5g">
+                    <form action="login_action.php" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email">
                         <div class="row">
                             <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
                             <div class="col-12">
@@ -30,10 +30,10 @@
                                 <input type="email" name="email" placeholder="Email" data-form-field="Email" required="required" class="form-control input display-7" id="email-form4-i">
                             </div>
                             <div class="col-md-12  form-group" data-for="password">
-                                <input type="password" name="password" placeholder="Password" data-form-field="Password" required="required" class="form-control input display-7" id="password-form4-i">
+                                <input type="password" name="pass" placeholder="Password" data-form-field="Password" required="required" class="form-control input display-7" id="password-form4-i">
                             </div>
                             <div class="col-md-12 input-group-btn  mt-2 align-center">
-                                <button type="submit" class="btn btn-primary btn-form display-4">LOGIN</button>
+                                <button type="submit" class="btn btn-primary btn-form display-4" value="Login">LOGIN</button>
                             </div>
                             <div class="col-md-12  form-group" style="text-align:center">Not an Admin? Request an Admin privilege <a href="#">here</a> </div>
                         </div>
