@@ -21,7 +21,7 @@
                     </strong></h2>
                     <div class="mbr-section-text">
                         <p class="mbr-text mb-5 pt-3 mbr-light mbr-fonts-style display-5">
-                        Click any text or icon to edit or style it. Use the block parameters to hide/show text or icons and change media size or position.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab eius nemo ratione unde quibusdam voluptates adipisci ipsam a vitae alias officia commodi debitis autem numquam nobis consequuntur distinctio, hic esse.
                         </p>
                     </div>
 
@@ -40,7 +40,7 @@
 
                             <div class="card-box">
                                 <p class="block-text mbr-fonts-style display-7">
-                                   Mobirise offers several themes that include sliders, galleries, article blocks, counters, accordions, video, animated text, live filtered tables, shop, contact forms, lightbox, testimonials, timelines, google map, progress bars and more. 
+                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo saepe tempore perferendis adipisci placeat tenetur iste necessitatibus fuga facilis quasi facere commodi delectus maiores at porro nisi, recusandae in quia.
                                 </p>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
 
                             <div class="card-box">
                                 <p class="block-text mbr-fonts-style display-7">
-                                    Cut down the development time with drag-and-drop website builder. Drop the blocks into the page, edit content inline and publish - no technical skills required.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat vel odit beatae. Et mollitia nobis molestias praesentium. Saepe laboriosam explicabo expedita consequuntur labore! Veritatis, sequi excepturi eum fuga illo aperiam.
                                 </p>
                             </div>
                         </div>
