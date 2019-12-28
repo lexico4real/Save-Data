@@ -1,6 +1,67 @@
 <?php
     $page_title = 'Register' ;
     include_once('header.html');
+
+
+    require_once('connect_db.php');
+    if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
+    {
+        # Insert first name.
+        $fn = mysqli_real_escape_string( $dbc, trim( $_POST[ 'fname' ] ) ) ;
+
+        # Insert other name.
+        $on = mysqli_real_escape_string( $dbc, trim( $_POST[ 'oname' ] ) ) ;
+
+        # Insert last name.
+        $ln = mysqli_real_escape_string( $dbc, trim( $_POST[ 'lname' ] ) ) ;
+
+        # Insert gender.
+        $g = mysqli_real_escape_string( $dbc, trim( $_POST[ 'gender' ] ) ) ;
+
+        # Insert email address:
+        $e = mysqli_real_escape_string( $dbc, trim( $_POST[ 'email' ] ) ) ;
+
+        # Insert date of birth.
+        $db = mysqli_real_escape_string( $dbc, trim( $_POST[ 'dob' ] ) ) ;
+
+        # Insert address1.
+        $ad1 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'address1' ] ) ) ;
+
+        # Insert address2.
+        $ad2 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'address2' ] ) ) ;
+
+        # Insert city.
+        $ct = mysqli_real_escape_string( $dbc, trim( $_POST[ 'city' ] ) ) ;
+
+        # Insert state
+        $st = mysqli_real_escape_string( $dbc, trim( $_POST[ 'state' ] ) ) ;
+
+        # Insert country.
+        $ctr = mysqli_real_escape_string( $dbc, trim( $_POST[ 'country' ] ) ) ;
+
+        # Insert phone1.
+        $ph1 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone1' ] ) ) ;
+
+        # Insert phone2.
+        $ph2 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone2' ] ) ) ;
+
+        # Insert next of kin.
+        $nk = mysqli_real_escape_string( $dbc, trim( $_POST[ 'nok' ] ) ) ;
+
+        # Insert note.
+        $n = mysqli_real_escape_string( $dbc, trim( $_POST[ 'note' ] ) ) ;
+
+
+        $q = "SELECT regID FROM register WHERE email='$e'" ;
+        $r = @mysqli_query ( $dbc, $q ) ;
+        if ( mysqli_num_rows( $r ) != 0 ) $errors[] = 'This email is linked to a record already. <a href="register.php">Register</a>' ;
+
+        $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note, regDate) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n', NOW() )";
+        $r = @mysqli_query ( $dbc, $q ) ;
+        
+        # Close database connection.
+        mysqli_close($dbc);
+    }
 ?>
 
 
