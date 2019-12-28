@@ -18,28 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <script src = "https://maps.googleapis.com/maps/api/js/?v=3.exp&libraries=places&key=AIzaSyBrgz7DHZgtJLAtyJNi7TM_ViXwjIaSOqA"></script>
-  
-  <script>
-      var searchInput = 'country-header15-f';
 
-      $(document).ready(function (){
-          var autocomplete;
-          autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
-              types: ['geocode']
-          });
-
-          google.maps.event.addListener(autocomplete, 'place_changed', function (){
-              var near_place = autocomplete.getPlace();
-              document.getElementById('latitude_input').value = near_place.geometry.location.lat();
-              document.getElementById('longitude_input').value = near_place.geometry.location.lng();
-          });
-      });
-      $(document).on('change', '#'+searchInput, function () {
-        document.getElementById('latitude_input').value = '';
-        document.getElementById('longitude_input').value = '';
-      });
-  </script>
-  
 </head>
 <body>
     <section class="engine"><a href="#">Company Name</a></section><section once="footers" class="cid-rLAOUSliu1" id="footer6-k">
@@ -70,21 +49,17 @@
                          <img src="assets/images/logoreg-122x114.png" alt="" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://save-data.php">COMPANY NAME</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="#">COMPANY NAME</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-primary display-4" href="index.php">
-                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a>
+                    <a class="nav-link link text-primary display-4" href="admin_panel.php">
+                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>ADMIN HOME</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link link text-primary display-4" href="about.php"><span class="mbri-info mbr-iconfont mbr-iconfont-btn"></span>
-                        About</a>
-                </li><li class="nav-item"><a class="nav-link link text-primary display-4" href="index.php"><span class="mbri-cash mbr-iconfont mbr-iconfont-btn"></span>
-                        Donate</a></li><li class="nav-item"><a class="nav-link link text-primary display-4" href="contact.php"><span class="mbri-pin mbr-iconfont mbr-iconfont-btn"></span>
-                        Contact</a></li><li class="nav-item"><a class="nav-link link text-primary display-4" href="faq.php"><span class="mbri-question mbr-iconfont mbr-iconfont-btn"></span>
-                        FAQ</a></li></ul>
+                <li class="nav-item"><a class="nav-link link text-primary display-4" href="message.php"><span class="mbri-cash mbr-iconfont mbr-iconfont-btn"></span>
+                        MESSAGE</a></li><li class="nav-item"><a class="nav-link link text-primary display-4" href="logout.php"><span class="mbri-question mbr-iconfont mbr-iconfont-btn"></span>
+                        LOGOUT</a></li></ul>
             
         </div>
     </nav>
