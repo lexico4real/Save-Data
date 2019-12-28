@@ -43,7 +43,7 @@
                     <div class="card-box">
                         <h4 class="card-title py-3 mbr-fonts-style display-7">How it works</h4>
                         <p class="mbr-text mbr-fonts-style display-7">
-                           Mobirise is an easy website builder - just drop site elements to your page, add content and style it to look the way you like.
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, hic a quidem atque facilis, repellat, vel tenetur neque quas voluptates cum magnam provident minus nesciunt minima? Perferendis a earum enim!
                         </p>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="card-box">
                         <h4 class="card-title py-3 mbr-fonts-style display-7">What you need</h4>
                         <p class="mbr-text mbr-fonts-style display-7">
-                           All sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site.
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatum debitis porro iste modi quidem voluptas autem eveniet facilis officia, beatae hic accusantium odit officiis, recusandae necessitatibus velit quia suscipit?
                         </p>
                     </div>
                 </div>
