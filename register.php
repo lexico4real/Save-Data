@@ -51,11 +51,11 @@
         # Insert note.
         $n = mysqli_real_escape_string( $dbc, trim( $_POST[ 'note' ] ) ) ;
 
-
+        /*
         $q = "SELECT regID FROM register WHERE email='$e'" ;
         $r = @mysqli_query ( $dbc, $q ) ;
-        if ( mysqli_num_rows( $r ) != 0 ) $errors[] = 'This email is linked to a record already. <a href="register.php">Register</a>' ;
-
+        if ( mysqli_num_rows( $r ) != 0 ) {$errors[] = 'This email is linked to a record already. <a href="register.php">Register</a>' ;}
+        */
         $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note, regDate) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n', NOW() )";
         $r = @mysqli_query ( $dbc, $q ) ;
         
