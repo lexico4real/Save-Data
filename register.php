@@ -3,9 +3,11 @@
     include_once('header.html');
 
 
-    require_once('connect_db.php');
+    
     if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
     {
+        require_once('connect_db.php');
+        
         # Insert first name.
         $fn = mysqli_real_escape_string( $dbc, trim( $_POST[ 'first_name' ] ) ) ;
 
@@ -51,13 +53,15 @@
         # Insert note.
         $n = mysqli_real_escape_string( $dbc, trim( $_POST[ 'note' ] ) ) ;
 
-        /*
+        
         $q = "SELECT regID FROM register WHERE email='$e'" ;
         $r = @mysqli_query ( $dbc, $q ) ;
         if ( mysqli_num_rows( $r ) != 0 ) {$errors[] = 'This email is linked to a record already. <a href="register.php">Register</a>' ;}
-        */
-        $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note, regDate) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n', NOW() )";
-        $r = @mysqli_query ( $dbc, $q ) ;
+        else{
+            $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n' )";
+            $r = @mysqli_query ( $dbc, $q ) ;
+        }
+        
         
         # Close database connection.
         mysqli_close($dbc);
@@ -75,7 +79,7 @@
         <div class="row">
             
                 <div class="form-container col-lg-12 col-sm-8">
-                    <div class="media-container-column" data-form-type="formoid">
+                    <div class="media-container-column" data-form-type="">
                         <!---Formbuilder Form--->
                         <form action="register.php" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="dIbVba7+ttPk0+hxXrJmb7JlcOjh/MWsNO6BzO/VT6DgWcC5J+qtWTiMqR+BGqIod1mLuVnsMG9BMqym+ZBYhaB/yDh6dAmDgtAgVAk2VtaLXbcru9lNTbiwlknnciOU">
                             <div class="row">
