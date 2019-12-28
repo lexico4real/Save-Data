@@ -20,7 +20,16 @@
             </div>
             <div class="col-md-6">
                 <h2 class="pb-3 align-left mbr-fonts-style display-2 align-center" style="color: #ED3567;">
-                    ADMIN HOME
+                    LOGGED OUT
+                    <?php
+                        $_SESSION = array() ;
+  
+                        # Destroy the session.
+                        session_destroy() ;
+                        
+                        # Display body section.
+                        echo '<h1 style="text-align:center">Goodbye!</h1><p style="text-align:center"><a href="admin_login.php">Login</a></p>' ;
+                    ?>
                 </h2>
             </div>
         </div>

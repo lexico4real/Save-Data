@@ -29,7 +29,7 @@ function validate( $dbc, $email = '', $pwd = '')
   # On success retrieve admin_id, first_name, and last name from 'admin' database.
   if ( empty( $errors ) ) 
   {
-    $q = "SELECT adminID, first_name, last_name FROM admin WHERE email='$e' AND pass=SHA1('$p')" ;  
+    $q = "SELECT adminID, first_name, last_name FROM admin WHERE email='$e' AND pass='$p'" ;  
     $r = mysqli_query ( $dbc, $q ) ;
     if ( @mysqli_num_rows( $r ) == 1 ) 
     {

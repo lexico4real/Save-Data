@@ -18,11 +18,17 @@
                 </h2>
                 <div data-form-type="">
                     <!---Formbuilder Form--->
-                    <form action="login_action.php" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email">
+                    <form action="login_action.php" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
                         <div class="row">
-                            <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
                             <div class="col-12">
-                                
+                                <?php
+                                    if ( isset( $errors ) && !empty( $errors ) )
+                                    {
+                                        echo '<div class="alert alert-danger">
+                                                <strong>Alert!</strong> Wrong email/password!!!
+                                            </div>';
+                                    }
+                                ?>
                             </div>
                         </div>
                         <div class="dragArea row">
