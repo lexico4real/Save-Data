@@ -1,4 +1,5 @@
 <?php
+    $makeActiveHome = 'active';
     # Access session.
     session_start() ;
 

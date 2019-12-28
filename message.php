@@ -1,4 +1,5 @@
 <?php
+    $makeActiveMsg = 'active';
     # Access session.
     session_start() ;
 
