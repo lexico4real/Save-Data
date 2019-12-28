@@ -78,8 +78,8 @@
                                 <div class="col-md-12 form-group " data-for="nok">
                                     <input type="text" name="nok" placeholder="Next of Kin" data-form-field="nok" required="required" class="form-control px-3 display-7" id="nok-header15-f">
                                 </div>
-                                <div class="col-md-12 form-group " data-for="email">
-                                    <input type="email" name="email" placeholder="Email" data-form-field="Email" required="required" class="form-control px-3 display-7" id="email-header15-f">
+                                <div class="col-md-12 form-group " data-for="note">
+                                    <input type="text" name="note" placeholder="Note: Optional" data-form-field="Note" class="form-control px-3 display-7" id="note-header15-f">
                                 </div>
                                 
                             </div>
