@@ -109,7 +109,7 @@
                                 </div>
                                 <div class="col-md-12 form-group " data-for="gender">
                                     <select name="gender" data-form-field="Gender" required="required" class="form-control px-3 display-7" id="gender-header15-f" value="<?php if (isset($_POST['gender'])) echo $_POST['gender']; ?>">
-                                        <option value="male">Choose your gender</option>
+                                        <option value="" disabled selected>Choose your gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="dragArea col-lg-4">
                                 <div class="col-md-12 form-group " data-for="dob">
-                                    <input type="date" name="dob" value="2018-07-22" data-form-field="dob" required="required" class="form-control px-3 display-7" id="dob-header15-f" max = "2005-12-31" value="<?php if (isset($_POST['dob'])) echo $_POST['dob']; ?>">
+                                    <input type="text" name="dob" placeholder="Date of Birth" onfocus="(this.type='date')" data-form-field="dob" required="required" class="form-control px-3 display-7" id="dob-header15-f" max = "2005-12-31" value="<?php if (isset($_POST['dob'])) echo $_POST['dob']; ?>">
                                 </div>
                                 <div class="col-md-12 form-group " data-for="address1">
                                     <input type="text" name="address1" placeholder="Address Field 1" data-form-field="address" required="required" class="form-control px-3 display-7" id="address1-header15-f" value="<?php if (isset($_POST['address1'])) echo $_POST['address1']; ?>">
