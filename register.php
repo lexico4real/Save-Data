@@ -69,11 +69,11 @@
                                     <input type="hidden" id="latitude_input" />
                                     <input type="hidden" id="longitude_input" />
                                 </div>
-                                <div class="col-md-12 form-group " data-for="phone">
-                                    <input type="phone" name="phone" placeholder="Phone Number" data-form-field="phone" required="required" class="form-control px-3 display-7" id="phone-header15-f">
+                                <div class="col-md-12 form-group " data-for="phone1">
+                                    <input type="phone1" name="phone1" placeholder="Phone Number 1" data-form-field="phone1" required="required" class="form-control px-3 display-7" id="phone1-header15-f">
                                 </div>
-                                <div class="col-md-12 form-group " data-for="lname">
-                                    <input type="text" name="last_name" placeholder="Last Name" data-form-field="LName" required="required" class="form-control px-3 display-7" id="lname-header15-f">
+                                <div class="col-md-12 form-group " data-for="phone2">
+                                    <input type="text" name="phone2" placeholder="Phone Number 2" data-form-field="phone2" class="form-control px-3 display-7" id="phone2-header15-f">
                                 </div>
                                 <div class="col-md-12 form-group " data-for="nok">
                                     <input type="text" name="nok" placeholder="Next of Kin" data-form-field="nok" required="required" class="form-control px-3 display-7" id="nok-header15-f">
