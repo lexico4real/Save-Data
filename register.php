@@ -1,71 +1,6 @@
 <?php
     $page_title = 'Register' ;
     include_once('header.html');
-
-
-    
-    if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
-    {
-        require_once('connect_db.php');
-        
-        # Insert first name.
-        $fn = mysqli_real_escape_string( $dbc, trim( $_POST[ 'first_name' ] ) ) ;
-
-        # Insert other name.
-        $on = mysqli_real_escape_string( $dbc, trim( $_POST[ 'other_name' ] ) ) ;
-
-        # Insert last name.
-        $ln = mysqli_real_escape_string( $dbc, trim( $_POST[ 'last_name' ] ) ) ;
-
-        # Insert gender.
-        $g = mysqli_real_escape_string( $dbc, trim( $_POST[ 'gender' ] ) ) ;
-
-        # Insert email address:
-        $e = mysqli_real_escape_string( $dbc, trim( $_POST[ 'email' ] ) ) ;
-
-        # Insert date of birth.
-        $db = mysqli_real_escape_string( $dbc, trim( $_POST[ 'dob' ] ) ) ;
-
-        # Insert address1.
-        $ad1 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'address1' ] ) ) ;
-
-        # Insert address2.
-        $ad2 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'address2' ] ) ) ;
-
-        # Insert city.
-        $ct = mysqli_real_escape_string( $dbc, trim( $_POST[ 'city' ] ) ) ;
-
-        # Insert state
-        $st = mysqli_real_escape_string( $dbc, trim( $_POST[ 'state' ] ) ) ;
-
-        # Insert country.
-        $ctr = mysqli_real_escape_string( $dbc, trim( $_POST[ 'country' ] ) ) ;
-
-        # Insert phone1.
-        $ph1 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone1' ] ) ) ;
-
-        # Insert phone2.
-        $ph2 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone2' ] ) ) ;
-
-        # Insert next of kin.
-        $nk = mysqli_real_escape_string( $dbc, trim( $_POST[ 'nok' ] ) ) ;
-
-        # Insert note.
-        $n = mysqli_real_escape_string( $dbc, trim( $_POST[ 'note' ] ) ) ;
-
-        
-        $q = "SELECT regID FROM register WHERE email='$e'" ;
-        $r = @mysqli_query ( $dbc, $q ) ;
-        if ( mysqli_num_rows( $r ) != 0 ) {$errors[] = 'This email is linked to a record already. <a href="register.php">Register</a>' ;}
-        else{
-            $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n' )";
-            $r = @mysqli_query ( $dbc, $q ) ;
-        }
-        
-        
-        # Close database connection.
-        mysqli_close($dbc);
-    }
 ?>
 
 
@@ -83,7 +18,80 @@
                         <!---Formbuilder Form--->
                         <form action="register.php" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="dIbVba7+ttPk0+hxXrJmb7JlcOjh/MWsNO6BzO/VT6DgWcC5J+qtWTiMqR+BGqIod1mLuVnsMG9BMqym+ZBYhaB/yDh6dAmDgtAgVAk2VtaLXbcru9lNTbiwlknnciOU">
                             <div class="row">
-                                <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                                <div class="col-12">
+                                    <?php
+                                            if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
+                                            {
+                                                require_once('connect_db.php');
+                                                
+                                                # Insert first name.
+                                                $fn = mysqli_real_escape_string( $dbc, trim( $_POST[ 'first_name' ] ) ) ;
+                                        
+                                                # Insert other name.
+                                                $on = mysqli_real_escape_string( $dbc, trim( $_POST[ 'other_name' ] ) ) ;
+                                        
+                                                # Insert last name.
+                                                $ln = mysqli_real_escape_string( $dbc, trim( $_POST[ 'last_name' ] ) ) ;
+                                        
+                                                # Insert gender.
+                                                $g = mysqli_real_escape_string( $dbc, trim( $_POST[ 'gender' ] ) ) ;
+                                        
+                                                # Insert email address:
+                                                $e = mysqli_real_escape_string( $dbc, trim( $_POST[ 'email' ] ) ) ;
+                                        
+                                                # Insert date of birth.
+                                                $db = mysqli_real_escape_string( $dbc, trim( $_POST[ 'dob' ] ) ) ;
+                                        
+                                                # Insert address1.
+                                                $ad1 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'address1' ] ) ) ;
+                                        
+                                                # Insert address2.
+                                                $ad2 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'address2' ] ) ) ;
+                                        
+                                                # Insert city.
+                                                $ct = mysqli_real_escape_string( $dbc, trim( $_POST[ 'city' ] ) ) ;
+                                        
+                                                # Insert state
+                                                $st = mysqli_real_escape_string( $dbc, trim( $_POST[ 'state' ] ) ) ;
+                                        
+                                                # Insert country.
+                                                $ctr = mysqli_real_escape_string( $dbc, trim( $_POST[ 'country' ] ) ) ;
+                                        
+                                                # Insert phone1.
+                                                $ph1 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone1' ] ) ) ;
+                                        
+                                                # Insert phone2.
+                                                $ph2 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone2' ] ) ) ;
+                                        
+                                                # Insert next of kin.
+                                                $nk = mysqli_real_escape_string( $dbc, trim( $_POST[ 'nok' ] ) ) ;
+                                        
+                                                # Insert note.
+                                                $n = mysqli_real_escape_string( $dbc, trim( $_POST[ 'note' ] ) ) ;
+                                        
+                                                
+                                                $q = "SELECT regID FROM register WHERE email='$e'" ;
+                                                $r = @mysqli_query ( $dbc, $q ) ;
+                                                if ( mysqli_num_rows( $r ) != 0 ) {
+                                                    echo '<div class="alert alert-danger">
+                                                            <strong>Alert!</strong> This email is linked to a record in our database already!!!
+                                                        </div>';
+                                                }
+                                                else{
+                                                    $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n' )";
+                                                    $r = @mysqli_query ( $dbc, $q ) ;
+                                        
+                                                    echo '<div class="alert alert-success">
+                                                            <strong>Success!</strong> Thanks for filling out the form!!!
+                                                        </div>';
+                                                }
+                                                
+                                                
+                                                # Close database connection.
+                                                mysqli_close($dbc);
+                                            }
+                                    ?>
+                                </div>
                                 <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
                                 </div>
                             </div>
