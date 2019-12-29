@@ -52,7 +52,7 @@
                                       $nm = mysqli_real_escape_string( $dbc, trim( $_POST[ 'name' ] ) ) ;
                                     
                                       # phone.
-                                      $ph = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone' ] ) ) ;
+                                      $tp = mysqli_real_escape_string( $dbc, trim( $_POST[ 'topic' ] ) ) ;
                                     
                                       # email address:
                                       $e = mysqli_real_escape_string( $dbc, trim( $_POST[ 'email' ] ) ) ;
@@ -61,7 +61,7 @@
                                       $m = mysqli_real_escape_string( $dbc, trim( $_POST[ 'message' ] ) ) ;
                                       
                                       # On success insert msg into 'contact_message' database table.
-                                      $q = "INSERT INTO contact_message (name, phone, email, message) VALUES ('$nm', '$ph', '$e', '$m')";
+                                      $q = "INSERT INTO contact_message (name, topic, email, message) VALUES ('$nm', '$tp', '$e', '$m')";
                                         $r = @mysqli_query ( $dbc, $q ) ;
                                         
                                         echo '<div class="alert alert-success">
@@ -79,8 +79,8 @@
                             <div class="col-md-6  form-group" data-for="name">
                                 <input type="text" name="name" placeholder="Your Name" data-form-field="Name" required="required" class="form-control input display-7" id="name-form4-i">
                             </div>
-                            <div class="col-md-6  form-group" data-for="phone">
-                                <input type="text" name="phone" placeholder="Phone" data-form-field="Phone" required="required" class="form-control input display-7" id="phone-form4-i">
+                            <div class="col-md-6  form-group" data-for="topic">
+                                <input type="text" name="topic" placeholder="Subject" data-form-field="Topic" required="required" class="form-control input display-7" id="topic-form4-i">
                             </div>
                             <div data-for="email" class="col-md-12  form-group">
                                 <input type="text" name="email" placeholder="Email" data-form-field="Email" class="form-control input display-7" required="required" id="email-form4-i">

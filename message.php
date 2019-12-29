@@ -22,44 +22,42 @@
                 <h2 class="pb-3 align-left mbr-fonts-style display-2 align-center" style="color: #ED3567;">
                     MESSAGES
                 </h2>
-                <div id="accordion">
-                    <div class="card">
-                    <div class="card-header">
-                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                        Collapsible Group Item #1
-                        </a>
-                    </div>
-                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                        <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <?php
+                # Open database connection.
+                require ( 'connect_db.php' ) ;
+
+                # Retrieve items from 'register' database table.
+                $q = "SELECT * FROM contact_message" ;
+                $r = mysqli_query( $dbc, $q ) ;
+                if ( mysqli_num_rows( $r ) > 0 )
+                {
+                    echo '<div id="accordion">';
+                    while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
+                    {
+                        echo '<div class="card">
+                        <div class="card-header">';
+                        $id = $row['msgID'];
+                        ?>
+                            <a class="card-link" data-toggle="collapse" href="#collapse<php echo {$id}; ?>">
+                        <?php
+                            echo '#'.$row['msgID']. ' ' .$row['topic']. ' --> '. $row['msgDate'].
+                            '</a>
+                        </div>';
+                        ?>
+                        <div id="collapse<php echo {$id}; ?>" class="collapse" data-parent="#accordion">
+                        <?php
+                            echo '<div class="card-body">
+                            <h3>' .$row['topic']. '</h3>
+                            <p>' .$row['msgDate']. '</p>'
+                            .$row['message']
+                            .'<p>From: <i>' .$row['name']. '</i></p>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                    <div class="card">
-                    <div class="card-header">
-                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                        Collapsible Group Item #2
-                    </a>
-                    </div>
-                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </div>
-                    </div>
-                    </div>
-                    <div class="card">
-                    <div class="card-header">
-                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                        Collapsible Group Item #3
-                        </a>
-                    </div>
-                    <div id="collapseThree" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </div>
-                    </div>
-                    </div>
-                </div>
+                        </div>';
+                    }
+                    echo '</div>';
+                }
+                ?>
             </div>
         </div>
     </div>
