@@ -6,7 +6,7 @@
     # Redirect if not logged in.
     if ( !isset( $_SESSION[ 'adminID' ] ) ) { require ( 'login_tools.php' ) ; load() ; }
 
-    $page_title = 'Admin Login' ;
+    $page_title = 'Admin Panel' ;
     include_once('admin_header.html');
 ?>
 
@@ -23,6 +23,16 @@
                     ADMIN HOME
                 </h2>
                 <?php
+                     echo '<table class="table table-dark" style="color:#ED3567;">
+                     <thead>
+                         <tr>
+                             <th>ID</th>
+                             <th>First Name</th>
+                             <th>Last Name</th>
+                             <th>Email</th>
+                             <th>Detail</th>
+                         </tr>
+                     </thead>';
                             # Open database connection.
                             require ( 'connect_db.php' ) ;
 
@@ -31,28 +41,18 @@
                             $r = mysqli_query( $dbc, $q ) ;
                             if ( mysqli_num_rows( $r ) > 0 )
                             {
-                echo '<table class="table table-dark" style="color:#ED3567;">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
-                            <th>Detail</th>
-                        </tr>
-                    </thead>';
-                            echo '<tbody><tr>';
+                            echo '<tbody>';
                             while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
                             {
-                                echo '<td>1</td>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td data-toggle="tooltip" title="View full detail"><a href="detail.php"><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></a></td>';
+                                echo '<tr><td>' .$row['regID'] .'</td>
+                                <td>' .$row['firstName']. '</td>
+                                <td>' .$row['lastName']. '</td>
+                                <td>' .$row['email']. '</td>
+                                <td data-toggle="tooltip" title="View full detail"><a href="detail.php"><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></a></td></tr>';
                             }
+                            echo '</tbody>';
+                            echo '</table>';
                         }
-                            echo '</tr></tbody>';
-                echo '</table>';
                 mysqli_close( $dbc ) ; 
                 ?>
             </div>
