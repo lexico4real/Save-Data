@@ -38,21 +38,21 @@
                         <td>John</td>
                         <td>Doe</td>
                         <td>john@example.com</td>
-                        <td><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></td>
+                        <td data-toggle="tooltip" title="View full detail"><a href="detail.php"><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></a></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Mary</td>
                         <td>Moe</td>
                         <td>mary@example.com</td>
-                        <td><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></td>
+                        <td data-toggle="tooltip" title="View full detail"><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>July</td>
                         <td>Dooley</td>
                         <td>july@example.com</td>
-                        <td><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></td>
+                        <td data-toggle="tooltip" title="View full detail"><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></td>
                     </tr>
                     </tbody>
                 </table>
