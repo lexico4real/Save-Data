@@ -38,27 +38,31 @@
                         <td>Dooley</td>
                     </tr>
                     <tr>
-                        <td>Last Name</td>
+                        <td>Gender</td>
                         <td>Dooley</td>
                     </tr>
                     <tr>
-                        <td>Last Name</td>
+                        <td>Email</td>
                         <td>Dooley</td>
                     </tr>
                     <tr>
-                        <td>Last Name</td>
+                        <td>Date of Birth</td>
                         <td>Dooley</td>
                     </tr>
                     <tr>
-                        <td>Last Name</td>
+                        <td>Address</td>
                         <td>Dooley</td>
                     </tr>
                     <tr>
-                        <td>Last Name</td>
+                        <td>Phone Number</td>
                         <td>Dooley</td>
                     </tr>
                     <tr>
-                        <td>Last Name</td>
+                        <td>Next of Kin</td>
+                        <td>Dooley</td>
+                    </tr>
+                    <tr>
+                        <td>Date Time</td>
                         <td>Dooley</td>
                     </tr>
                     </tbody>
