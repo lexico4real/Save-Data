@@ -39,7 +39,7 @@
                         ?>
                             <a class="card-link" data-toggle="collapse" href="#c<?php echo $row['msgID'] ?>">
                         <?php
-                            echo '#'.$row['msgID']. ' ' .$row['topic']. ' --> '. $row['msgDate'].
+                            echo '<span class="col-3">' . '#'.$row['msgID'].'</span>'. '<span class="col-6">' .$row['topic']. ' </span> '. '<span class="col-3">'. $row['msgDate']. '</span>'.
                             '</a>
                         </div>';
                         ?>
