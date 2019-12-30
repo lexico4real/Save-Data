@@ -27,7 +27,7 @@
                 require ( 'connect_db.php' ) ;
 
                 # Retrieve items from 'register' database table.
-                $q = "SELECT * FROM contact_message" ;
+                $q = "SELECT * FROM contact_message ORDER BY msgID DESC" ;
                 $r = mysqli_query( $dbc, $q ) ;
                 if ( mysqli_num_rows( $r ) > 0 )
                 {
@@ -36,15 +36,14 @@
                     {
                         echo '<div class="card">
                         <div class="card-header">';
-                        $id = $row['msgID'];
                         ?>
-                            <a class="card-link" data-toggle="collapse" href="#collapse<php echo {$id}; ?>">
+                            <a class="card-link" data-toggle="collapse" href="#c<?php echo $row['msgID'] ?>">
                         <?php
                             echo '#'.$row['msgID']. ' ' .$row['topic']. ' --> '. $row['msgDate'].
                             '</a>
                         </div>';
                         ?>
-                        <div id="collapse<php echo {$id}; ?>" class="collapse" data-parent="#accordion">
+                        <div id="c<?php echo $row['msgID'] ?>" class="collapse" data-parent="#accordion">
                         <?php
                             echo '<div class="card-body">
                             <h3>' .$row['topic']. '</h3>
@@ -52,11 +51,11 @@
                             .$row['message']
                             .'<p>From: <i>' .$row['name']. '</i></p>
                             </div>
-                        </div>
                         </div>';
                     }
                     echo '</div>';
                 }
+                echo '</div>';
                 ?>
             </div>
         </div>
