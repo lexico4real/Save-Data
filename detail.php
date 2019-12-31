@@ -8,6 +8,7 @@
 
     $page_title = 'Admin Login' ;
     include_once('admin_header.html');
+    $id=$_GET['regID'];
 ?>
 
 <section class="mbr-section form4 cid-rLAZIDX1vo" id="form4-i">
@@ -23,50 +24,66 @@
                 <h2 class="pb-3 align-left mbr-fonts-style display-2 align-center" style="color: #ED3567;">
                     FULL DETAIL
                 </h2>
-                <table class="table table-striped table-bordered" style="color:#ED3567;">
-                   <tbody>
-                    <tr>
+                <?php
+                
+            echo '<table class="table table-striped table-bordered" style="color:#ED3567;">';
+            # Open database connection.
+            require ( 'connect_db.php' ) ;
+
+            # Retrieve items from 'register' database table.
+            $q = "SELECT * FROM register WHERE regID = '$id'" ;
+            $r = mysqli_query( $dbc, $q ) ;
+            if ( mysqli_num_rows( $r ) > 0 )
+            {
+            echo '<tbody>';
+            while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
+            {
+
+                echo'<tr>
                         <td>First Name</td>
-                        <td>Doe</td>
+                        <td>'.$row['firstName'].'</td>
                     </tr>
                     <tr>
                         <td>Other Name</td>
-                        <td>Moe</td>
+                        <td>'.$row['otherName'].'</td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
-                        <td>Dooley</td>
+                        <td>'.$row['lastName'].'</td>
                     </tr>
                     <tr>
                         <td>Gender</td>
-                        <td>Dooley</td>
+                        <td>'.$row['gender'].'</td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td>Dooley</td>
+                        <td>'.$row['email'].'</td>
                     </tr>
                     <tr>
                         <td>Date of Birth</td>
-                        <td>Dooley</td>
+                        <td>'.$row['dob'].'</td>
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td>Dooley</td>
+                        <td>'.$row['address1']. ' '.$row['address2']. ', '.$row['city']. ', '.$row['state']. ', '. $row['country'].'</td>
                     </tr>
                     <tr>
                         <td>Phone Number</td>
-                        <td>Dooley</td>
+                        <td>'.$row['phoneNo1'].'</td>
                     </tr>
                     <tr>
                         <td>Next of Kin</td>
-                        <td>Dooley</td>
+                        <td>'.$row['nok'].'</td>
                     </tr>
                     <tr>
-                        <td>Date Time</td>
-                        <td>Dooley</td>
-                    </tr>
-                    </tbody>
-                </table>
+                        <td>Date/Time Registered</td>
+                        <td>'.$row['regDate'].'</td>
+                    </tr>';
+            }
+                    echo '</tbody>';
+        }
+                echo '</table>';
+                ?>
                 <div class="col-md-12 input-group-btn  mt-2 align-center">
                     <a href="admin_panel.php"><button type="submit" class="btn btn-primary btn-form display-4" value="Login">BACK</button></a>
                 </div>

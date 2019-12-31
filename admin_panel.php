@@ -48,7 +48,7 @@
                                 <td>' .$row['firstName']. '</td>
                                 <td>' .$row['lastName']. '</td>
                                 <td>' .$row['email']. '</td>
-                                <td data-toggle="tooltip" title="View full detail"><a href="detail.php"><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></a></td></tr>';
+                                <td data-toggle="tooltip" title="View full detail"><a href="detail.php?regID='.$row['regID'].'"><button type="submit" style="padding:0px 15px; color:black; background-color: #ED3567; border-radius:5px;">View</button></a></td></tr>';
                             }
                             echo '</tbody>';
                             echo '</table>';
