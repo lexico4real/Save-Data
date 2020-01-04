@@ -31,8 +31,8 @@
                             Ready for offers and cooperation
                         </h5>
                         <p class="mbr-text align-left mbr-fonts-style display-7">
-                            Phone: +234 (0) 000 0000 001 <br>
-                            Email: company@mail.com
+                            Phone: 01 293 0704 <br>
+                            Email: dejidoherty@gmail.com
                         </p>
                     </div>
                 </div>
