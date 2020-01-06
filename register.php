@@ -6,7 +6,7 @@
 
 <section class="header15 cid-rLAY5DW7OJ mbr-fullscreen mbr-parallax-background" id="header15-f">
 
-    
+
 
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(7, 59, 76);"></div>
     <style>
@@ -17,12 +17,12 @@
             border: 1px solid #ED3567;
 		}
         input[type='file'] {
-            background: white;    
+            background: white;
         }
 	</style>
     <div class="container">
         <div class="row">
-            
+
                 <div class="form-container col-lg-12 col-sm-8">
                     <div class="media-container-column" data-form-type="">
                         <!---Formbuilder Form--->
@@ -34,53 +34,53 @@
                                             if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
                                             {
                                                 require_once('connect_db.php');
-                                                
+
                                                 # Insert first name.
                                                 $fn = mysqli_real_escape_string( $dbc, trim( $_POST[ 'first_name' ] ) ) ;
-                                        
+
                                                 # Insert other name.
                                                 $on = mysqli_real_escape_string( $dbc, trim( $_POST[ 'other_name' ] ) ) ;
-                                        
+
                                                 # Insert last name.
                                                 $ln = mysqli_real_escape_string( $dbc, trim( $_POST[ 'last_name' ] ) ) ;
-                                        
+
                                                 # Insert gender.
                                                 $g = mysqli_real_escape_string( $dbc, trim( $_POST[ 'gender' ] ) ) ;
-                                        
+
                                                 # Insert email address:
                                                 $e = mysqli_real_escape_string( $dbc, trim( $_POST[ 'email' ] ) ) ;
-                                        
+
                                                 # Insert date of birth.
                                                 $db = mysqli_real_escape_string( $dbc, trim( $_POST[ 'dob' ] ) ) ;
-                                        
+
                                                 # Insert address1.
                                                 $ad1 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'address1' ] ) ) ;
-                                        
+
                                                 # Insert address2.
                                                 $ad2 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'address2' ] ) ) ;
-                                        
+
                                                 # Insert city.
                                                 $ct = mysqli_real_escape_string( $dbc, trim( $_POST[ 'city' ] ) ) ;
-                                        
+
                                                 # Insert state
                                                 $st = mysqli_real_escape_string( $dbc, trim( $_POST[ 'state' ] ) ) ;
-                                        
+
                                                 # Insert country.
                                                 $ctr = mysqli_real_escape_string( $dbc, trim( $_POST[ 'country' ] ) ) ;
-                                        
+
                                                 # Insert phone1.
                                                 $ph1 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone1' ] ) ) ;
-                                        
+
                                                 # Insert phone2.
                                                 $ph2 = mysqli_real_escape_string( $dbc, trim( $_POST[ 'phone2' ] ) ) ;
-                                        
+
                                                 # Insert next of kin.
                                                 $nk = mysqli_real_escape_string( $dbc, trim( $_POST[ 'nok' ] ) ) ;
-                                        
+
                                                 # Insert note.
                                                 $n = mysqli_real_escape_string( $dbc, trim( $_POST[ 'note' ] ) ) ;
-                                        
-                                                
+
+
                                                 $q = "SELECT regID FROM register WHERE email='$e'" ;
                                                 $r = @mysqli_query ( $dbc, $q ) ;
                                                 if ( mysqli_num_rows( $r ) != 0 ) {
@@ -91,13 +91,13 @@
                                                 else{
                                                     $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n' )";
                                                     $r = @mysqli_query ( $dbc, $q ) ;
-                                        
+
                                                     echo '<div class="alert alert-success">
                                                             <strong>Success!</strong> Thanks for filling out the form!!!
                                                         </div>';
                                                 }
-                                                
-                                                
+
+
                                                 # Close database connection.
                                                 mysqli_close($dbc);
                                             }
@@ -135,7 +135,7 @@
                                 <div class="col-md-12 form-group " data-for="email">
                                     <input type="email" name="email" placeholder="Email" data-form-field="Email" required="required" class="form-control px-3 display-7" id="email-header15-f" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>">
                                 </div>
-                                
+
                             </div>
                             <div class="dragArea col-lg-4">
                                 <div class="col-md-12 form-group " data-for="dob">
@@ -153,7 +153,7 @@
                                 <div class="col-md-12 form-group " data-for="state">
                                     <input type="text" name="state" placeholder="Polling Unit" data-form-field="state" required="required" class="form-control px-3 display-7" id="state-header15-f" value="<?php if (isset($_POST['state'])) echo $_POST['state']; ?>">
                                 </div>
-                                
+
                             </div>
                             <div class="dragArea col-lg-4">
                                 <div class="col-md-12 form-group " data-for="country">
@@ -173,7 +173,7 @@
                                 <div class="col-md-12 form-group " data-for="note">
                                     <input type="text" name="note" placeholder="Note (Optional)" data-form-field="Note" class="form-control px-3 display-7" id="note-header15-f" value="<?php if (isset($_POST['note'])) echo $_POST['note']; ?>">
                                 </div>
-                                
+
                             </div>
                         </div>
                             <div class="col-md-12 input-group-btn align-center">
@@ -182,7 +182,7 @@
                         </form><!---Formbuilder Form--->
                     </div>
             </div>
-            
+
         </div>
     </div>
 </section>
