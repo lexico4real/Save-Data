@@ -38,8 +38,11 @@
             echo '<tbody>';
             while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
             {
-
                 echo'<tr>
+                        <td></td>
+                        <td>'; echo'<img src="images/'.$row["img"].'" height="300px" width="300px">'; echo'</td>
+                    </tr>
+                    <tr>
                         <td>First Name</td>
                         <td>'.$row['firstName'].'</td>
                     </tr>

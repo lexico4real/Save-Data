@@ -137,7 +137,7 @@
                             <div class="align-center">
                                 <div class="col-md-12 form-group " data-for="img">
                                     <img id="blah" src="#" class="imageCont"><br /><br />
-                                    <input type="file" id="img-header15-f" style="color:transparent; width:90px;" name="image" id="image" onchange="readURL(this);" required /><br />
+                                    <input type="file" id="img-header15-f" style="color:transparent; width:95px;" name="image" id="image" onchange="readURL(this);" required /><br />
                                 </div>
                             </div>
                             <br />
