@@ -26,14 +26,21 @@
                 <div class="form-container col-lg-12 col-sm-8">
                     <div class="media-container-column" data-form-type="">
                         <!---Formbuilder Form--->
-                        <form action="register.php" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" enctype="multipart/form-data" value="dIbVba7+ttPk0+hxXrJmb7JlcOjh/MWsNO6BzO/VT6DgWcC5J+qtWTiMqR+BGqIod1mLuVnsMG9BMqym+ZBYhaB/yDh6dAmDgtAgVAk2VtaLXbcru9lNTbiwlknnciOU">
+                        <form action="register.php" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form" enctype="multipart/form-data">
+                        <input type="hidden" name="email" data-form-email="true" value="dIbVba7+ttPk0+hxXrJmb7JlcOjh/MWsNO6BzO/VT6DgWcC5J+qtWTiMqR+BGqIod1mLuVnsMG9BMqym+ZBYhaB/yDh6dAmDgtAgVAk2VtaLXbcru9lNTbiwlknnciOU">
                             <input type="hidden" name="size" />
                             <div class="row">
                                 <div class="col-12">
                                     <?php
-                                            if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
+                                            if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) 
                                             {
+                                                $target_dir = "images/" . basename($_FILES["image"]["name"]);
+
                                                 require_once('connect_db.php');
+
+                                                # Insert image.
+                                                $image = $_FILES["image"]["name"];
+                                                $imageFileType = strtolower(pathinfo($target_dir,PATHINFO_EXTENSION));
 
                                                 # Insert first name.
                                                 $fn = mysqli_real_escape_string( $dbc, trim( $_POST[ 'first_name' ] ) ) ;
@@ -80,22 +87,42 @@
                                                 # Insert note.
                                                 $n = mysqli_real_escape_string( $dbc, trim( $_POST[ 'note' ] ) ) ;
 
+                                                //Check if image file is a actual image or fake image
+                                                $check = getimagesize($_FILES["image"]["tmp_name"]);
+                                                
+                                                if($check === false) {
+                                                    echo "File is not an image.";
+                                                } 
+                                                
+                                                else {
+                                                    if ($_FILES["image"]["size"] > 2000000) {
+                                                        echo "Sorry, your file is too large.";
+                                                    }
+                                                    else{
 
-                                                $q = "SELECT regID FROM register WHERE email='$e'" ;
-                                                $r = @mysqli_query ( $dbc, $q ) ;
-                                                if ( mysqli_num_rows( $r ) != 0 ) {
-                                                    echo '<div class="alert alert-danger">
-                                                            <strong>Alert!</strong> This email is linked to a record in our database already!!!
-                                                        </div>';
-                                                }
-                                                else{
-                                                    $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n' )";
-                                                    $r = @mysqli_query ( $dbc, $q ) ;
+                                                            $q = "SELECT regID FROM register WHERE email='$e'" ;
+                                                            $r = @mysqli_query ( $dbc, $q ) ;
+                                                            if ( mysqli_num_rows( $r ) != 0 ) {
+                                                                echo '<div class="alert alert-danger">
+                                                                        <strong>Alert!</strong> This email is linked to a record in our database already!!!
+                                                                    </div>';
+                                                            }
+                                                            else{
+                                                                $q = "INSERT INTO register (firstName, otherName, lastName, gender, email, dob, address1, address2, city, state, country, phoneNo1, phoneNo2, nok, note, img) VALUES ('$fn', '$on', '$ln', '$g', '$e', '$db', '$ad1', '$ad2', '$ct', '$st', '$ctr', '$ph1', '$ph2', '$nk', '$n', '$image' )";
+                                                                $r = @mysqli_query ( $dbc, $q ) ;
 
-                                                    echo '<div class="alert alert-success">
-                                                            <strong>Success!</strong> Thanks for filling out the form!!!
-                                                        </div>';
-                                                }
+                                                                echo '<div class="alert alert-success">
+                                                                        <strong>Success!</strong> Thanks for filling out the form!!!
+                                                                    </div>';
+                                                            }
+
+                                                            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_dir)) {
+                                                                echo "Picture uploaded.";
+                                                            } else {
+                                                                echo "Sorry, there was an error uploading your file.";
+                                                            }
+                                                        }
+                                                    }
 
 
                                                 # Close database connection.
@@ -110,7 +137,7 @@
                             <div class="align-center">
                                 <div class="col-md-12 form-group " data-for="img">
                                     <img id="blah" src="#" class="imageCont"><br /><br />
-                                    <input type="file" id="img-header15-f" style="color:transparent; width:100px;" name="image" id="image" onchange="readURL(this);" required /><br />
+                                    <input type="file" id="img-header15-f" style="color:transparent; width:90px;" name="image" id="image" onchange="readURL(this);" required /><br />
                                 </div>
                             </div>
                             <br />
@@ -177,7 +204,7 @@
                             </div>
                         </div>
                             <div class="col-md-12 input-group-btn align-center">
-                                <button type="submit" class="btn btn-secondary btn-form display-4" value="register">SUBMIT</button>
+                                <input type="submit" class="btn btn-secondary btn-form display-4" value="SUBMIT" name="upload">
                             </div>
                         </form><!---Formbuilder Form--->
                     </div>
