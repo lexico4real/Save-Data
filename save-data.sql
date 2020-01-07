@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2019 at 09:04 PM
+-- Generation Time: Jan 07, 2020 at 11:02 PM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.1.29
 
@@ -42,7 +42,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`adminID`, `first_name`, `last_name`, `email`, `pass`, `level`) VALUES
-(1, 'Oluyinka', 'Abubakar', 'lexico4real@gmail.com', 'Oluyinka1', '1');
+(1, 'Oluyinka', 'Abubakar', 'lexico4real@gmail.com', 'Oluyinka1', '1'),
+(2, 'Admin', 'Admin', 'admin@gmail.com', 'admin', '1');
 
 -- --------------------------------------------------------
 
@@ -93,17 +94,9 @@ CREATE TABLE `register` (
   `phoneNo2` varchar(20) NOT NULL,
   `nok` varchar(50) NOT NULL,
   `note` varchar(200) NOT NULL,
+  `img` varchar(500) NOT NULL,
   `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `register`
---
-
-INSERT INTO `register` (`regID`, `firstName`, `otherName`, `lastName`, `gender`, `email`, `dob`, `address1`, `address2`, `city`, `state`, `country`, `phoneNo1`, `phoneNo2`, `nok`, `note`, `regDate`) VALUES
-(1, 'Oluyinka', '', 'Abubakar', 'male', 'lexico4real@gmail.com', '2002-07-24', '62, Evans Street', 'Eweina Area', 'Lagos Island', 'lagos', 'Nigeria', '08020796658', '', 'Oluyinka Abubakar', '', '2019-12-29 11:53:07'),
-(2, 'Rukayat', 'Mojisola', 'Olatunji', 'female', 'rolatunjee@yahoo.com', '1999-06-15', '1A Agoiro Cour, Ricca Street', '', 'Lagos Island', 'Lagos', 'Nigeria', '07090908789', '', 'Bimpe Olatunji', '', '2019-12-29 12:03:55'),
-(3, 'Bryan', 'Ki', 'Kobi', 'male', 'bryankikobi@gmail.com', '1999-10-19', '78, Victoria Lan', 'Ikoyi', 'Lagos', 'Lagos', 'Nigeria', '08020796658', '', 'Smith Kobi', '', '2019-12-30 09:39:32');
 
 --
 -- Indexes for dumped tables
@@ -135,7 +128,7 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `adminID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `adminID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contact_message`
@@ -147,7 +140,7 @@ ALTER TABLE `contact_message`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `regID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `regID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
