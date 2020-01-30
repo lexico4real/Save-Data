@@ -228,6 +228,24 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    function onChange(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        var entries = e.target.webkitEntries; // Get all dropped items as FS API entries.
+
+        [].forEach.call(entries, function(entry) {
+
+            // Copy the entry into our local filesystem.
+            entry.copyTo(fs.root, null, function(copiedEntry) {
+            ...
+            }, onError);
+
+        });
+        }
+
+        document.querySelector('input[type="file"]').addEventListener('change', onChange);
 </script>
 
 <?php
