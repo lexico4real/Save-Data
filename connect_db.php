@@ -1,7 +1,7 @@
 <?php
 
 
-$dbc = mysqli_connect("localhost", "root", "", "save-data") 
+$dbc = mysqli_connect("localhost", "root", "", "yif") 
 OR die(mysqli_connect_error());
 
 
