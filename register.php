@@ -91,12 +91,16 @@
                                                 $check = getimagesize($_FILES["image"]["tmp_name"]);
                                                 
                                                 if($check === false) {
-                                                    echo "File is not an image.";
+                                                    echo '<div class="alert alert-danger">
+                                                    <strong>Alert!</strong> File is not sn image
+                                                </div>';
                                                 } 
                                                 
                                                 else {
                                                     if ($_FILES["image"]["size"] > 2000000) {
-                                                        echo "Sorry, your file is too large.";
+                                                        echo '<div class="alert alert-danger">
+                                                        <strong>Alert!</strong> Sorry! Your image is too large.
+                                                    </div>';
                                                     }
                                                     else{
 
