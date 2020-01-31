@@ -11,10 +11,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAEIpgj38KyLFELm2bK9Y7krBkz1K-cMq8&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe></div>
+                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d63422.468922759865!2d3.334242526608638!3d6.533768565299514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d6.4985447999999995!2d3.3592165!4m5!1s0x103b92cd12b89285%3A0xee670a134865fbed!2sKosofe%2C%20Lagos%2C%20Nigeria!3m2!1d6.569080199999999!2d3.379308!5e0!3m2!1sen!2sus!4v1580483221835!5m2!1sen!2sus" allowfullscreen=""></iframe></div>
             </div>
             <div class="col-md-6">
-                <h2 class="pb-3 align-left mbr-fonts-style display-2" style="color: #ED3567;">
+                <h2 class="pb-3 align-left mbr-fonts-style display-2" style="color: #2609F2;">
                     Drop a Message
                 </h2>
                 <div>
@@ -89,7 +89,7 @@
                                 <textarea name="message" placeholder="Message" data-form-field="Message" class="form-control input display-7" id="message-form4-i" required="required"></textarea>
                             </div>
                             <div class="col-md-12 input-group-btn  mt-2 align-center">
-                                <button type="submit" class="btn btn-primary btn-form display-4">SEND MESSAGE</button>
+                                <button type="submit" class="btn btn-form display-4" style="background: #4dfa09">SEND MESSAGE</button>
                             </div>
                         </div>
                     </form><!---Formbuilder Form--->
